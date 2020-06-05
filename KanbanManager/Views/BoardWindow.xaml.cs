@@ -32,8 +32,8 @@ namespace KanbanManager
             contentGrid.ColumnDefinitions.Add(col);
             while (itemCount < totalItems)
             {
-                contentGrid.Children.Add();
-                Grid.SetColumn(, itemCount);
+                //contentGrid.Children.Add();
+                //Grid.SetColumn(, itemCount);
                 col = new ColumnDefinition
                 {
                     Width = GridLength.Auto
