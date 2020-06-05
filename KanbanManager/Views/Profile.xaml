@@ -1,0 +1,103 @@
+﻿<Window x:Class="KanbanManager.Profile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KanbanManager"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Profile" Height="600" Width="1024" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1" Background="#FFAEC1E4">
+            <StackPanel Margin="50,0">
+                <TextBlock Text="PROFILE" HorizontalAlignment="Center" FontSize="80" FontFamily="Freestyle Script"
+                           Margin="0,50"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel HorizontalAlignment="Right">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind ="User" VerticalAlignment="Center" Margin="10,0,0,0" Height="40"
+                                                         Width="40"/>
+                                <Label HorizontalAlignment="Center" Content="Username" FontSize="20" Margin="10" 
+                                       FontFamily="Freestyle Script"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind ="Key" VerticalAlignment="Center" Margin="10,0,0,0" Height="40"
+                                                         Width="40"/>
+                                <Label HorizontalAlignment="Center" Content="Password" FontSize="20" Margin="10"
+                                       FontFamily="Freestyle Script"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind ="Email" VerticalAlignment="Center" Margin="10,0,0,0" Height="40"
+                                                         Width="40"/>
+                                <Label HorizontalAlignment="Center" Content="E-mail" FontSize="20" Margin="10"
+                                       FontFamily="Freestyle Script"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Left" Grid.Column="1">
+                            <TextBox HorizontalAlignment="Center" FontSize="20" Width="200" Margin="10,15" Background="#FFAEC1E4"
+                                     BorderBrush="White"/>
+                            <PasswordBox HorizontalAlignment="Center" FontSize="20" Width="200" Margin="10,15" Background="#FFAEC1E4"
+                                         BorderBrush="White"/>
+                            <TextBox HorizontalAlignment="Center" FontSize="20" Width="200" Margin="10" Background="#FFAEC1E4"
+                                     BorderBrush="White"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Background="White" Margin="5" Height="200" Width="200">
+                        <Image Source="/KanbanManager;component/Resources/profile.png" Height="150" Width="150"/>
+                    </Grid>
+                </Grid>
+                <Grid>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="BtnLoadPicture" Margin="65,10,300,0" Foreground="White" Background="#FF498CC3" Height="40"
+                                VerticalAlignment="Top">
+                            <Grid Width="100">
+                                <materialDesign:PackIcon Kind="InsertPhoto" VerticalAlignment="Center" HorizontalAlignment="Left"
+                                                         Margin="10,0"/>
+                                <TextBlock HorizontalAlignment="Center" Text="LOAD"/>
+                            </Grid>
+                        </Button>
+                        <StackPanel Grid.Row="1" Width="250" HorizontalAlignment="Right">
+                            <Button x:Name="BtnEdit" Margin="65,10" Foreground="White" Background="#FF49C375" Height="40">
+                                <Grid Width="100">
+                                    <materialDesign:PackIcon Kind="Floppy" VerticalAlignment="Center" HorizontalAlignment="Left"
+                                                         Margin="10,0"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="SAVE"/>
+                                </Grid>
+                            </Button>
+                            <Button x:Name="BtnSave" Margin="65,10" Foreground="White" Background="#FFC34949" Height="40">
+                                <Grid Width="100">
+                                    <materialDesign:PackIcon Kind="Bin" VerticalAlignment="Center" HorizontalAlignment="Left"
+                                                         Margin="10,0"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="DELETE"/>
+                                </Grid>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Grid>
+        <!-- Side Menu -->
+        <Grid Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <local:SideMenuControl />
+        </Grid>
+    </Grid>
+</Window>
